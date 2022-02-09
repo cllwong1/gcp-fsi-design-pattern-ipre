@@ -424,7 +424,7 @@ module "cloudsql_db" {
   assign_public_ip     = var.db_assign_public_ip
   vpc_network          = module.network_private.network_self_link
   deletion_protection  = false
-
+  create_timeout = "60m"
   module_depends_on = [module.private_service_access.peering_completed]
 }
 
